@@ -1,0 +1,18 @@
+{% extends "header.html" %}
+{% block content %}
+{% if objects %}
+    <div class="row">
+
+        <div class="">
+            <h3>{{objects.blog_title}}</h3>
+            <p style="font-size:70%">Published {{objects.created_at}}</p>
+            {{objects.blog_content|safe}}
+        </div>
+    </div>
+{% else %}
+<p>
+    No objects Delivered
+</p>
+{% endif %}
+
+{% endblock %}

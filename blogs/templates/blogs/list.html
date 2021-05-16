@@ -1,0 +1,25 @@
+{% extends "header.html" %}
+
+{% block content %}
+    {% if objects %}
+        <div class="row">
+        {% for object in objects %}
+            <div class="col s12 m6 l4">
+                <a href="{% url 'blogs:titles' object.id %}", style="color:#000">
+                    <div class="card hoverable   ">
+                        <div class="card-content">
+                            <div class="card-title">{{object.blog_category}}</div>
+
+                            <p>{{object.category_summary}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>
+            No objects Delivered
+        </p>
+    {% endif %}
+{% endblock %}

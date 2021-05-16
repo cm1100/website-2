@@ -1,0 +1,21 @@
+{% extends "header.html" %}
+{% block content %}
+{% if objects %}
+
+
+<ul class="collection">
+    {% for object in objects %}
+        <li class="collection-item">
+            <h6> <a href="{% url 'blogs:real_blog' object.id %}">{{object.blog_title}}</a></h6>
+        </li>
+
+
+    {% endfor %}
+</ul>
+{% else %}
+<p>
+    No objects Delivered
+</p>
+{% endif %}
+
+{% endblock %}
