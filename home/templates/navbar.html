@@ -1,0 +1,34 @@
+{% load static %}
+<nav >
+
+
+</ul>
+
+    <div class="nav-wrapper cyan darken-3" >
+
+        <a href="#" class="brand-logo right"><img src="/static/pic2.png"> </a>
+
+      <ul id="nav-mobile" >
+        <li><a href="{% url 'tutorials:homepage' %}">Home</a></li>
+        <li><a href="{% url 'blogs:homepage' %}">Blogs</a> </li>
+        <li><a href="{% url 'forums:all' %}">Forums</a> </li>
+
+
+        {% if user.is_authenticated %}
+
+            <li><a href="{% url 'logout' %}?next={% url 'tutorials:homepage' %}">Logout</a></li>
+        {% else %}
+
+            <li><a href="{% url 'login' %}?next={% url 'tutorials:homepage' %}">Login</a></li>
+
+
+        {% endif %}
+
+      </ul>
+    </div>
+
+
+     </nav>
+
+
+
